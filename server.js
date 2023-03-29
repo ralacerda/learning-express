@@ -1,8 +1,7 @@
-import http from "node:http";
+import app from "./src/app.js";
 
-const server = http.createServer((req, res) => {
-  res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end("Curso de node");
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+  console.log(`Servidor escutando em http://localhost:${port}`);
 });
-
-server.listen(3000);
