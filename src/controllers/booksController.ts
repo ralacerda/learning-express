@@ -38,4 +38,13 @@ export default class BookController {
       res.status(400).send({ message: `Error: ${e}` });
     }
   };
+
+  static removeBook = async (req: Request, res: Response) => {
+    try {
+      const result = await books.findByIdAndDelete(req.params.id);
+      res.send({ message: result });
+    } catch (e) {
+      res.status(400).send({ message: `Error: ${e}` });
+    }
+  };
 }
