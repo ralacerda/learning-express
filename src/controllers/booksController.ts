@@ -6,8 +6,8 @@ export default class BookController {
     try {
       const allBooks = await books.find();
       res.send({ message: allBooks });
-    } catch {
-      new Error("Erro");
+    } catch (e) {
+      res.status(400).send({ message: `Error: ${e}` });
     }
   };
 
@@ -15,6 +15,10 @@ export default class BookController {
     try {
       const singleBook = await books.findById(req.params.id);
       res.send({ message: singleBook });
+    } catch (e) {
+      res.status(400).send({ message: `Error: ${e}` });
+    }
+  };
     } catch {
       new Error("Erro");
     }
