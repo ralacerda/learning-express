@@ -1,5 +1,5 @@
-import books from "../models/Book";
 import type { Request, Response } from "express";
+import books from "#models/Book.js";
 
 export default class BookController {
   static getAllBooks = async (req: Request, res: Response) => {

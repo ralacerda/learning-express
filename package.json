@@ -12,6 +12,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "imports": {
+    "#controllers/*": "./dist/src/controllers/*",
+    "#models/*": "./dist/src/models/*",
+    "#routes/*": "./dist/src/routes/*"
+  },
   "dependencies": {
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
