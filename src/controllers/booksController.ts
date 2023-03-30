@@ -19,8 +19,23 @@ export default class BookController {
       res.status(400).send({ message: `Error: ${e}` });
     }
   };
-    } catch {
-      new Error("Erro");
+
+  static updateBook = async (req: Request, res: Response) => {
+    try {
+      const result = await books.findByIdAndUpdate(req.params.id, req.body);
+      res.send({ message: `Updated book: ${result}` });
+    } catch (e) {
+      res.status(400).send({ message: `Error: ${e}` });
+    }
+  };
+
+  static addBook = async (req: Request, res: Response) => {
+    try {
+      let newBook = new books(req.body);
+      newBook.save();
+      res.send({ message: "book created" });
+    } catch (e) {
+      res.status(400).send({ message: `Error: ${e}` });
     }
   };
 }
