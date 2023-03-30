@@ -1,4 +1,4 @@
-import books from "@models/Book";
+import books from "../models/Book";
 import type { Request, Response } from "express";
 
 export default class BookController {

@@ -1,6 +1,6 @@
 import express from "express";
-import db from "./config/connectDb";
-import routes from "@routes/index";
+import routes from "./routes";
+import db from "./config/connectAtlas";
 
 db.on("error", () => console.log("ERRO"));
 db.once("open", () => console.log("Conected"));

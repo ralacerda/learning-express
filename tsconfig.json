@@ -4,14 +4,8 @@
     "esModuleInterop": true,
     "target": "es6",
     "moduleResolution": "node",
-    "sourceMap": true,
-    "outDir": "dist",
-    "baseUrl": "./src",
-    "paths": {
-      "@controllers/*": ["controllers/*"],
-      "@routes/*": ["routes/*"],
-      "@models/*": ["models/*"]
-    }
+    "sourceMap": false,
+    "outDir": "dist"
   },
   "lib": ["es2015"]
 }
